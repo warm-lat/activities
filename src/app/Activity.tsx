@@ -46,7 +46,7 @@ export const Activity = () => {
 				try {
 					log.info('Attempting to login to Discord...')
 					await discordSdk.commands.authorize({
-						client_id: '1323720110787268768',
+						client_id: '1420609343283531776',
 						response_type: 'code',
 						state: '',
 						prompt: 'none',
@@ -124,8 +124,8 @@ export const Activity = () => {
 							type: 2,
 							state: 'Idle',
 							assets: {
-								small_image: 'evict',
-								small_text: 'evict music'
+								small_image: 'warm',
+								small_text: 'warm.lat Music'
 							}
 						}
 					})
