@@ -20,7 +20,7 @@
 		"web"
 	],
 	"scripts": {
-		"build": "robo build",
+		"build": "bunx --bun robo build",
 		"deploy": "robo deploy",
 		"dev": "robox dev --tunnel",
 		"doctor": "sage doctor",
