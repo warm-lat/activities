@@ -190,7 +190,7 @@ export const Activity = () => {
 					setIsLoading(true)
 				}
 
-				const response = await fetch(`/.proxy/api/playing/${session.user.id}`)
+				const response = await fetch(`/api/playing/${session.user.id}`)
 				if (!response.ok) {
 					throw new Error(`Failed to fetch playing data (${response.status})`)
 				}
