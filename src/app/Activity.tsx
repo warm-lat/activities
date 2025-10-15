@@ -12,13 +12,13 @@ export const Activity = () => {
 
 	const log = {
 		info: (msg: string, data?: any) =>
-			console.log(`%c[Evict] %c${msg}`, 'color: #3b82f6; font-weight: bold', 'color: #94a3b8', data ? data : ''),
+			console.log(`%c[Warm] %c${msg}`, 'color: #3b82f6; font-weight: bold', 'color: #94a3b8', data ? data : ''),
 		success: (msg: string, data?: any) =>
-			console.log(`%c[Evict] %c${msg}`, 'color: #22c55e; font-weight: bold', 'color: #86efac', data ? data : ''),
+			console.log(`%c[Warm] %c${msg}`, 'color: #22c55e; font-weight: bold', 'color: #86efac', data ? data : ''),
 		error: (msg: string, error?: any) =>
-			console.log(`%c[Evict] %c${msg}`, 'color: #ef4444; font-weight: bold', 'color: #fca5a5', error ? error : ''),
+			console.log(`%c[Warm] %c${msg}`, 'color: #ef4444; font-weight: bold', 'color: #fca5a5', error ? error : ''),
 		warn: (msg: string, data?: any) =>
-			console.log(`%c[Evict] %c${msg}`, 'color: #f59e0b; font-weight: bold', 'color: #fcd34d', data ? data : '')
+			console.log(`%c[Warm] %c${msg}`, 'color: #f59e0b; font-weight: bold', 'color: #fcd34d', data ? data : '')
 	}
 
 	const formatTime = (ms: number) => {
