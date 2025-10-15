@@ -6,6 +6,7 @@ declare global {
       VITE_DISCORD_CLIENT_ID: string;
       DISCORD_CLIENT_SECRET: string;
       NODE_OPTIONS: string;
+      HOST: string;
       PORT: string;
     }
   }
