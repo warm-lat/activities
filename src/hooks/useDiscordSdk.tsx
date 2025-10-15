@@ -1,14 +1,10 @@
-// @ts-nocheck
-
 import { DiscordSDK, DiscordSDKMock } from '@discord/embedded-app-sdk'
 import { useState, useEffect, useCallback, useRef, createContext, useContext } from 'react'
 import type { ReactNode } from 'react'
 
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
 type DiscordSession = UnwrapPromise<ReturnType<typeof discordSdk.commands.authenticate>>
-type AuthorizeInput = Parameters<typeof discordSdk.commands.authorize>[0] & {
-	redirect_uri: string
-}
+type AuthorizeInput = Parameters<typeof discordSdk.commands.authorize>[0]
 type SdkSetupResult = ReturnType<typeof useDiscordSdkSetup>
 
 const queryParams = new URLSearchParams(window.location.search)
@@ -141,7 +137,7 @@ interface AuthenticateSdkOptions {
  * @returns The result of the Discord SDK `authenticate()` command
  */
 export async function authenticateSdk(options?: AuthenticateSdkOptions) {
-	const { scope = ['identify', 'guilds', 'rpc.activities.write', 'activity'] } = options ?? {}
+	const { scope = ['identify', 'guilds'] } = options ?? {}
 
 	await discordSdk.ready()
 	const { code } = await discordSdk.commands.authorize({
@@ -149,7 +145,7 @@ export async function authenticateSdk(options?: AuthenticateSdkOptions) {
 		response_type: 'code',
 		state: '',
 		prompt: 'none',
-		scope: scope,
+		scope: scope
 	})
 
 	const response = await fetch('/.proxy/api/token', {
