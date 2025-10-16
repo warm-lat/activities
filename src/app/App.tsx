@@ -14,7 +14,7 @@ import './App.css'
  */
 export default function App() {
 	return (
-		<DiscordContextProvider authenticate=true scope={['identify', 'guilds', 'rpc.activities.write']}>
+		<DiscordContextProvider authenticate={true} scope={['identify', 'guilds', 'rpc.activities.write']}>
 			<Activity />
 		</DiscordContextProvider>
 	)
