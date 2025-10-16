@@ -167,9 +167,15 @@ export const Activity = () => {
 						assets: {
 							large_image: data.current.album_art || defaultArt,
 							large_text: `${artist} - ${title}`,
-							small_image: 'evict',
+							small_image: 'warm',
 							small_text: data.voice_state?.paused ? 'Paused' : 'Playing'
-						}
+						},
+						buttons: [
+							{
+								label: 'Join the party',
+								url: `https://warm.lat/discord`
+							}
+						]
 					}
 				}
 
@@ -232,7 +238,7 @@ export const Activity = () => {
 					<div className="loading-indicator">
 						<div className="loading-dot" />
 						<span className="loading-text">
-							{isInitializing ? 'Initializing...' : `Connecting to Discord (${authAttempts}/${10})`}
+							{isInitializing ? 'Initializing...' : `Connecting... (${authAttempts}/${10})`}
 						</span>
 					</div>
 				</div>
@@ -247,7 +253,7 @@ export const Activity = () => {
 				<div className="auth-state">
 					<div className="auth-indicator">
 						<div className="auth-dot" />
-						<span className="auth-text">Not connected to Discord</span>
+						<span className="auth-text">Not connected</span>
 					</div>
 				</div>
 			) : (
@@ -255,7 +261,7 @@ export const Activity = () => {
 					<div className="status-card">
 						<div className="status-left">
 							<div className="status-indicator connected" />
-							<span>Connected to Discord</span>
+							<span>Connected</span>
 						</div>
 						<span className="status-right">{status}</span>
 					</div>
@@ -266,7 +272,7 @@ export const Activity = () => {
 								<div className="now-playing-content">
 									<div className="now-playing-header">
 										<div className="now-playing-dot" />
-										<span>NOW PLAYING</span>
+										<span>Now Playing</span>
 									</div>
 									
 									<div className="track-info">
@@ -319,7 +325,7 @@ export const Activity = () => {
 									<div className="queue-header">
 										<div className="queue-title">
 											<div className="queue-dot" />
-											<span>QUEUE</span>
+											<span>Queue</span>
 										</div>
 										<span className="queue-count">{playingData.queue_length} tracks</span>
 									</div>
