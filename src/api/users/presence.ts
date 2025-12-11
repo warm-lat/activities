@@ -1,15 +1,16 @@
-import type { RoboRequest } from '@robojs/server'
+import type { RoboRequest } from "@robojs/server";
 
 export default async (req: RoboRequest) => {
-  const userId = req.params.id
-  const response = await fetch(`https://api.warm.lat/playing/${userId}`, {
-    method: 'GET',
-    headers: {
-      'Authorization': req.headers.get('authorization') || '',
-      'Content-Type': 'application/json'
-    }
-  })
+	const userId = req.params.id;
+	const response = await fetch(`https://api.warm.lat/music/playing/${userId}`, {
+		method: "GET",
+		headers: {
+			Authorization: req.headers.get("authorization") || "ShHdce3nXXaYmQ5PzBNKKsbtRoamqYc",
+			"Content-Type": "application/json",
+		},
+	});
 
-  const data = await response.json()
-  return data
-} 
+	const data = await response.json();
+	return data;
+};
+

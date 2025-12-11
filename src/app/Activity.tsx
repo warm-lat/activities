@@ -172,8 +172,8 @@ export const Activity = () => {
 						},
 						buttons: [
 							{
-								label: 'Join the party',
-								url: `https://warm.lat/discord`
+								label: 'Listen using Warm',
+								url: `https://warm.lat/invite`
 							}
 						]
 					}
