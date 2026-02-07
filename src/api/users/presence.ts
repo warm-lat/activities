@@ -5,7 +5,7 @@ export default async (req: RoboRequest) => {
 	const response = await fetch(`https://reveal.warm.lat/music/playing/${userId}`, {
 		method: "GET",
 		headers: {
-			Authorization: req.headers.get("authorization") || "ShHdce3nXXaYmQ5PzBNKKsbtRoamqYc",
+			Authorization: "ShHdce3nXXaYmQ5PzBNKKsbtRoamqYc",
 			"Content-Type": "application/json",
 		},
 	});
